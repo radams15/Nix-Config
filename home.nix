@@ -3,6 +3,7 @@
 {
 home-manager.users.rhys = { pkgs, ... } : {
       nixpkgs.config.allowUnfree = true;
+      
       home.stateVersion = config.system.stateVersion;
       home.packages = with pkgs; [
         firefox
@@ -44,8 +45,9 @@ home-manager.users.rhys = { pkgs, ... } : {
 	 ];
       };
 
+
       dconf.settings = {
-        "org/gnome/desktop/wm/preferences" = {
+        "org/gnome/desktop/wm/preferences" = { # Left window controls
           "button-layout" = "close,minimize,maximize:appmenu";
         };
 
@@ -54,8 +56,12 @@ home-manager.users.rhys = { pkgs, ... } : {
           "clock-show-date" = true;
         };
 
-        "org/gnome/desktop/sound" = {
+        "org/gnome/desktop/sound" = { # 150% volume
           "allow-volume-above-100-percent" = true;
+        };
+
+        "org/gnome/mutter" = { # Scaling of X11 apps on Wayland.
+          experimental-features = [ "scale-monitor-framebuffer" ];
         };
 
      };
