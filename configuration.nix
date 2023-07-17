@@ -48,8 +48,17 @@
   };
 
   services.xserver.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  environment.gnome.excludePackages = with pkgs; [
+    gnome3.totem
+    gnome-photos
+    gnome3.gnome-music
+    gnome3.geary
+    gnome3.cheese
+    gnome-tour
+  ];
   
   services.xserver = {
     layout = "gb";
