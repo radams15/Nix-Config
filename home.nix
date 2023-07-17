@@ -3,7 +3,7 @@
 {
 home-manager.users.rhys = { pkgs, ... } : {
       nixpkgs.config.allowUnfree = true;
-      
+
       home.stateVersion = config.system.stateVersion;
       home.packages = with pkgs; [
         firefox
@@ -15,6 +15,15 @@ home-manager.users.rhys = { pkgs, ... } : {
         evolution
         davmail
         starship
+        gimp
+        prismlauncher
+        glib
+        tor-browser-bundle-bin
+        rhythmbox
+        distrobox
+
+        gnomeExtensions.gsconnect
+        gnomeExtensions.night-theme-switcher
       ];
       
       programs.starship = {
@@ -29,6 +38,7 @@ home-manager.users.rhys = { pkgs, ... } : {
         oh-my-zsh.enable = true;
         initExtra = ''
           eval "$(starship init zsh)"
+          export EDITOR=vim
         '';
         
         plugins = with pkgs; [
@@ -44,6 +54,24 @@ home-manager.users.rhys = { pkgs, ... } : {
 	      }
 	 ];
       };
+
+      programs.vim = {
+        enable = true;
+        plugins = with pkgs.vimPlugins; [
+          awesome-vim-colorschemes
+        ];
+        extraConfig = ''
+          set mouse=a
+          syntax enable
+          set number
+          set tabstop=4 " tabs=4 spaces
+          set shiftwidth=4 " 4 spaces for an indent
+          set expandtab " tabs => spaces
+          set termguicolors
+          colorscheme apprentice
+        '';
+      };
+
 
 
       dconf.settings = {
