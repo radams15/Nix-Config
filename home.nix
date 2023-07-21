@@ -24,6 +24,14 @@ home-manager.users.rhys = { pkgs, ... } : {
 
         gnomeExtensions.gsconnect
         gnomeExtensions.night-theme-switcher
+
+        jetbrains.clion
+        jetbrains.idea-ultimate
+        jetbrains.pycharm-professional
+
+        cmake
+        gdb
+        gcc
       ];
       
       programs.starship = {
@@ -57,16 +65,19 @@ home-manager.users.rhys = { pkgs, ... } : {
 
       programs.vim = {
         enable = true;
+        defaultEditor = true; # Set EDITOR variable
         plugins = with pkgs.vimPlugins; [
           awesome-vim-colorschemes
         ];
+        settings = {
+          mouse = "a"; # Enable mouse
+          number = true; # Line numbers
+          tabstop = 4; # 4-space tab
+          shiftwidth = 4; # 4-space indent
+          expandtab = true; # Use spaces over tabs
+        };
         extraConfig = ''
-          set mouse=a
           syntax enable
-          set number
-          set tabstop=4 " tabs=4 spaces
-          set shiftwidth=4 " 4 spaces for an indent
-          set expandtab " tabs => spaces
           set termguicolors
           colorscheme apprentice
         '';
