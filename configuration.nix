@@ -17,7 +17,6 @@
       }}/nixos" # Home-manager
       
       ./hardware-configuration.nix
-      ./home.nix
     ];
     
   system.stateVersion = "23.05";
@@ -65,7 +64,13 @@
     xkbVariant = "mac";
   };
 
+  services.logind.extraConfig = ''
+    RuntimeDirectorySize=4G
+  '';
+
   console.keyMap = "uk";
+
+  security.sudo.wheelNeedsPassword = false; # Sudo NOPASSWD for all in wheel.
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -96,10 +101,9 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Rhys Adams";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
 
-  
   nixpkgs.overlays = [
     (
       self: super:
@@ -129,6 +133,7 @@
     podman
     podman-compose
     epson-escpr
+    home-manager
   ];
 
   services.printing = {
