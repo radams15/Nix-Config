@@ -15,6 +15,8 @@ in {
         "org/gnome/desktop/interface" = {
           "clock-show-weekday" = true;
           "clock-show-date" = true;
+          "show-battery-percentage" = true;
+
         };
 
         "org/gnome/desktop/sound" = { # 150% volume
@@ -23,10 +25,15 @@ in {
 
         "org/gnome/mutter" = { # Scaling of X11 apps on Wayland.
           experimental-features = [ "scale-monitor-framebuffer" ];
+          "workspaces-only-on-primary" = true;
         };
 
         "org/gnome/desktop/background" = {
           picture-uri = "file://${wallpaperImg}";
+        };
+
+        "org/gnome/settings/daemon/plugins/color" = {
+          "night-light-enabled" = true;
         };
      };
  

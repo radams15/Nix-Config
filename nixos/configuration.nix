@@ -75,6 +75,8 @@
     experimental-features = "nix-command flakes";
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
