@@ -61,23 +61,10 @@
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs : {
-      vim-full = pkgs.vim-full.override {
-        perlSupport = true;
-        pythonSupport = true;
-        rubySupport = false;
-        luaSupport = false;
-        guiSupport = false;
-        netbeansSupport = false;
-      };
-    };
   };
 
   nix.settings = {
-    # Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
-    # Deduplicate and optimize nix store
-    #auto-optimise-store = true;
   };
 
   services.xserver.enable = true;
@@ -94,10 +81,18 @@
     gnome-tour
   ];
 
+  programs.vim.package = pkgs.vim-full.override {
+    perl = pkgs.perl;
+    python3 = pkgs.python3;
+    ruby = pkgs.ruby;
+    guiSupport = "no";
+    darwinSupport = false;
+  };
+
 
   environment.systemPackages = with pkgs; [
     home-manager
-    vim-full
+    config.programs.vim.package
     wget
     curl
     git
