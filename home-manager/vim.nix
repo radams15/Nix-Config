@@ -2,7 +2,6 @@
   pkgs, config, ...
 }: {
       programs.vim = {
-        enable = true;
         defaultEditor = true; # Set EDITOR variable
         plugins = with pkgs.vimPlugins; [
           awesome-vim-colorschemes

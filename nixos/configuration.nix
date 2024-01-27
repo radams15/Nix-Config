@@ -2,11 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -16,10 +23,6 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -55,12 +58,17 @@
     isNormalUser = true;
     description = "Rhys Adams";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+    ];
+    config = {
+      allowUnfree = true;
+    };
   };
 
   nix.settings = {
@@ -84,8 +92,8 @@
 
 
   environment.systemPackages = with pkgs; [
+    custom_vim
     home-manager
-    config.programs.vim.package
     perl
     python3
     ruby
@@ -93,13 +101,6 @@
     curl
     git
   ];
-
-  programs.vim.package = pkgs.vim_configurable.override {
-    perl = pkgs.perl;
-    python3 = pkgs.python3;
-    ruby = pkgs.ruby;
-    guiSupport = "no";
-  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;

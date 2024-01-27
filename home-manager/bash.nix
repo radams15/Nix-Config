@@ -5,8 +5,6 @@
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-export EDITOR=vim
-
 export LD_LIBRARY_PATH=
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 export PATH=$PATH:~/go/bin:~/binaryninja:~/idafree-8.3
