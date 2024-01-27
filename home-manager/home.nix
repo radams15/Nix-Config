@@ -61,6 +61,8 @@
     cmake
     gdb
     gcc
+
+    mktemplate
   ];
 
   programs.git = {
