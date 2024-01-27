@@ -69,7 +69,6 @@
         luaSupport = false;
         guiSupport = false;
         netbeansSupport = false;
-        sodiumSupport = false;
       };
     };
   };
