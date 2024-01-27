@@ -92,7 +92,24 @@
 
 
   environment.systemPackages = with pkgs; [
-    custom_vim
+    ((custom_vim.override{ }).customize {
+      name = "vim";
+
+      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+        start = [
+          awesome-vim-colorschemes
+          nerdtree
+          vim-devicons
+          vim-airline
+          vim-lsc
+        ];
+        opt = [];
+      };
+
+      vimrcConfig.customRC = ''
+        source ~/.config/vim/vimrc
+      '';
+    })
     home-manager
     perl
     python3
@@ -101,6 +118,7 @@
     curl
     git
   ];
+
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
