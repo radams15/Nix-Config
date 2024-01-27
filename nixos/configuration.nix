@@ -59,7 +59,21 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs : {
+      vim-full = pkgs.vim-full.override {
+        perlSupport = true;
+        pythonSupport = true;
+        rubySupport = false;
+        luaSupport = false;
+        guiSupport = false;
+        netbeansSupport = false;
+        sodiumSupport = false;
+      };
+    };
+  };
+
   nix.settings = {
     # Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
@@ -84,7 +98,7 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim-full
     wget
     curl
     git
