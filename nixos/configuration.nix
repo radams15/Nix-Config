@@ -81,22 +81,25 @@
     gnome-tour
   ];
 
-  programs.vim.package = pkgs.vim-full.override {
-    perl = pkgs.perl;
-    python3 = pkgs.python3;
-    ruby = pkgs.ruby;
-    guiSupport = "no";
-    darwinSupport = false;
-  };
 
 
   environment.systemPackages = with pkgs; [
     home-manager
     config.programs.vim.package
+    perl
+    python3
+    ruby
     wget
     curl
     git
   ];
+
+  programs.vim.package = pkgs.vim_configurable.override {
+    perl = pkgs.perl;
+    python3 = pkgs.python3;
+    ruby = pkgs.ruby;
+    guiSupport = "no";
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
