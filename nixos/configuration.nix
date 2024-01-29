@@ -14,7 +14,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ./virtualbox.nix
     ];
 
   # Bootloader.
