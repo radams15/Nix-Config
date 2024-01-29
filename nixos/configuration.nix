@@ -21,7 +21,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "the-brick"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -50,6 +50,8 @@
     layout = "gb";
     xkbVariant = "mac";
   };
+
+  documentation.nixos.enable = false; # remove nix manual program
 
   # Configure console keymap
   console.keyMap = "uk";
@@ -89,6 +91,7 @@
     gnome3.geary
     gnome3.cheese
     gnome-tour
+    epiphany
   ];
 
 
