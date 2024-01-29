@@ -77,6 +77,8 @@
     experimental-features = "nix-command flakes";
   };
 
+  environment.variables.EDITOR = "vim";
+
   security.sudo.wheelNeedsPassword = false;
 
   services.xserver.enable = true;
