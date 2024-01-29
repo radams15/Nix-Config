@@ -14,6 +14,7 @@
     ./dconf.nix
     ./bash.nix
     ./templates.nix
+    ./packages.nix
   ];
 
   nixpkgs = {
