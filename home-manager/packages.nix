@@ -2,12 +2,14 @@
   pkgs, ...
 }: {
   home.packages = with pkgs; [
+    authenticator
     firefox
     discord
     freetube
     jellyfin-media-player
     signal-desktop
     gnome.gnome-tweaks
+    gnome.eog
     evolution
     davmail
     starship
@@ -30,6 +32,7 @@
     jetbrains.rider
     jetbrains.goland
 
+    podman-compose
     cmake
     gdb
     gcc

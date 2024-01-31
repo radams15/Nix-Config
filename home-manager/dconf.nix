@@ -29,7 +29,8 @@ in {
         };
 
         "org/gnome/desktop/background" = {
-          picture-uri = "file://${wallpaperImg}";
+          picture-uri = "${wallpaperImg}";
+          picture-uri-dark = "${wallpaperImg}";
         };
 
         "org/gnome/settings/daemon/plugins/color" = {
