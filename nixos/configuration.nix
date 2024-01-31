@@ -126,6 +126,9 @@
     wget
     curl
     git
+
+    gnome.zenity
+    cryptsetup
   ];
 
 
