@@ -16,6 +16,7 @@
     [
       #./virtualbox.nix
       ./thinkpad.nix
+      ./share.nix
     ];
 
   # Bootloader.
