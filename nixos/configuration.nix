@@ -14,7 +14,8 @@
 {
   imports =
     [
-      ./virtualbox.nix
+      #./virtualbox.nix
+      ./thinkpad.nix
     ];
 
   # Bootloader.
