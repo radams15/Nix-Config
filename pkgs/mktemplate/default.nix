@@ -1,7 +1,7 @@
 { lib, stdenv, fetchFromGitHub, buildGoModule }:
 let
   pname = "mktempslate";
-  version = "1.0.0";
+  version = "1.1.0";
 in
    buildGoModule {
     inherit pname version;
@@ -11,7 +11,7 @@ in
       owner = "radams15";
       repo = "template";
       rev = "v${version}";
-      sha256 = "sha256-AJazid887O/ReSFRG4O3i9s1kEbK2T/CaZLl4YbFTfE";
+      sha256 = "sha256-1HNZTbr4OPaf8cPoYiZVDH0uLM7dv5zDXRfOwmQdGYU=";
     };
 
     meta = with lib; {
