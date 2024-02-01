@@ -53,6 +53,9 @@
     xkbVariant = "mac";
   };
 
+  # Make normal shebangs work
+  services.envfs.enable = true;
+
   documentation.nixos.enable = false; # remove nix manual program
 
   # Configure console keymap
