@@ -3,6 +3,7 @@
 }: {
   home.packages = with pkgs; [
     authenticator
+    libreoffice
     firefox
     discord
     freetube
