@@ -11,6 +11,7 @@
       "text/markdown" = ["org.gnome.TextEditor.desktop"];
       "application/pdf" = ["org.gnome.Evince.desktop"];
       "text/x-tex" = ["org.gnome.TextEditor.desktop"];
+      "text/plain" = ["org.gnome.TextEditor.desktop"];
     };
   };
 }

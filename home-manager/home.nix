@@ -37,36 +37,6 @@
     homeDirectory = "/home/rhys";
   };
 
-  home.packages = with pkgs; [
-    firefox
-    discord
-    freetube
-    jellyfin-media-player
-    signal-desktop
-    gnome.gnome-tweaks
-    evolution
-    davmail
-    starship
-    gimp
-    glib
-    tor-browser-bundle-bin
-    rhythmbox
-    distrobox
-
-    gnomeExtensions.gsconnect
-    gnomeExtensions.night-theme-switcher
-
-    jetbrains.clion
-    jetbrains.idea-ultimate
-    jetbrains.pycharm-professional
-
-    cmake
-    gdb
-    gcc
-
-    mktemplate
-  ];
-
   programs.git = {
     enable = true;
     userName = "Rhys Adams";

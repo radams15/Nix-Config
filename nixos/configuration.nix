@@ -58,6 +58,8 @@
 
   documentation.nixos.enable = false; # remove nix manual program
 
+  services.fwupd.enable = true;
+
   # Configure console keymap
   console.keyMap = "uk";
 
@@ -102,6 +104,8 @@
   ];
 
 
+
+  programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
     ((custom_vim.override{ }).customize {

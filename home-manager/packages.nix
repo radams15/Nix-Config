@@ -2,6 +2,7 @@
   pkgs, ...
 }: {
   home.packages = with pkgs; [
+    clapper
     authenticator
     libreoffice
     firefox
