@@ -1,13 +1,16 @@
 {
   pkgs, ...
 }: {
-  home.xdg.enable = true;
+  xdg.enable = true;
 
-  home.xdg.mimeApps = {
+  xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
+      "image/jpeg" = ["org.gnome.eog.desktop"];
+      "text/x-python" = ["org.gnome.TextEditor.desktop"];
       "text/markdown" = ["org.gnome.TextEditor.desktop"];
+      "application/pdf" = ["org.gnome.Evince.desktop"];
+      "text/x-tex" = ["org.gnome.TextEditor.desktop"];
     };
   };
 }
