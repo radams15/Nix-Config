@@ -133,6 +133,7 @@
     wget
     curl
     git
+    gnumake
 
     gnome.zenity
     cryptsetup
