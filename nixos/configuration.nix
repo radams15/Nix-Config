@@ -10,7 +10,17 @@
   pkgs,
   ...
 }:
-
+let
+  autoComplPop = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-autocomplpop";
+    src = pkgs.fetchFromGitHub {
+      owner = "vim-scripts";
+      repo = "AutoComplPop";
+      rev = "2.14.1";
+      hash = "sha256-HojOBhsYg3hPxObcbutr2sCMzco271XibeD9dk8q4g4=";
+    };
+  };
+in
 {
   imports =
     [
@@ -118,7 +128,10 @@
           nerdtree
           vim-devicons
           vim-airline
-          vim-lsc
+          vim-lsp
+          vim-lsp-ale
+          ale
+          autoComplPop
         ];
         opt = [];
       };
@@ -136,6 +149,9 @@
     git
     gnumake
     file
+
+    texlab
+    llvmPackages.clang-unwrapped
 
     gnome.zenity
     cryptsetup

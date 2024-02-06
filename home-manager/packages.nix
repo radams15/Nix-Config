@@ -1,6 +1,17 @@
 {
   pkgs, ...
-}: {
+}:
+let
+  perlLibs = pkgs.perl.withPackages (p: [
+    p.PerlCritic
+    p.PerlLanguageServer
+  ]);
+
+  pythonLibs = pkgs.python3.withPackages (p: [
+    p.flake8
+    p.pyls-flake8
+  ]);
+in {
   home.packages = with pkgs; [
     clapper
     authenticator
@@ -38,6 +49,9 @@
     cmake
     gdb
     gcc
+
+    perlLibs
+    pythonLibs
 
     mktemplate
   ];
