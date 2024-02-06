@@ -25,7 +25,7 @@ in {
 
         "org/gnome/mutter" = { # Scaling of X11 apps on Wayland.
           experimental-features = [ "scale-monitor-framebuffer" ];
-          "workspaces-only-on-primary" = true;
+          "workspaces-only-on-primary" = false;
         };
 
         "org/gnome/desktop/background" = {
