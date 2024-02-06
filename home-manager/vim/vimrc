@@ -14,7 +14,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 set number
 
 set termguicolors
-colorscheme apprentice
 syntax on
 
 map q <Nop>
@@ -31,7 +30,8 @@ EOF
 nnoremap cc :perl &comment_line <CR>
 xnoremap cc :perl &comment_block <CR>
 
-" perl &set_theme;
+perl &set_theme;
+
 filetype plugin on
 filetype plugin indent on
 let g:NERDCreateDefaultMappings = 1

@@ -114,6 +114,7 @@
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
         start = [
           awesome-vim-colorschemes
+          gruvbox
           nerdtree
           vim-devicons
           vim-airline
@@ -134,6 +135,7 @@
     curl
     git
     gnumake
+    file
 
     gnome.zenity
     cryptsetup
