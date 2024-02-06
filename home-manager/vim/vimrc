@@ -58,8 +58,22 @@ au User lsp_setup call lsp#register_server({
     \ 'allowlist': ['python'],
     \ })
 
+au User lsp_setup call lsp#register_server({
+    \ 'name': 'pls',
+    \ 'cmd': {server_info->['pls']},
+    \ 'allowlist': ['perl'],
+    \ })
+
+autocmd User lsp_setup call lsp#register_server({
+    \'name': 'texlab',
+    \'cmd': {server_info->[expand('/path/to/texlab')]},
+    \'whitelist': ['tex']
+    \})
+
 let g:ale_linters = {
     \   'python': ['pylsp'],
+    \   'perl': ['pls'],
+    \   'tex': ['texlab'],
     \ }
 
 set completeopt=longest,menuone

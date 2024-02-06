@@ -4,7 +4,7 @@
 let
   perlLibs = pkgs.perl.withPackages (p: [
     p.PerlCritic
-    p.PerlLanguageServer
+    p.PLS
   ]);
 
   pythonLibs = pkgs.python3.withPackages (p: [
