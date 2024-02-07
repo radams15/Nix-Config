@@ -137,7 +137,7 @@ in
       };
 
       vimrcConfig.customRC = ''
-        source ~/.config/vim/vimrc
+        source ~/.vim/vimrc
       '';
     })
     home-manager

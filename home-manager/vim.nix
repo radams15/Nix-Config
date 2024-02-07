@@ -1,7 +1,7 @@
 {
   pkgs, config, ...
 }: {
-  home.file."${config.xdg.configHome}/vim" = {
+  home.file."${config.home.homeDirectory}/.vim" = {
     source = ./vim;
     recursive = true;
   };
