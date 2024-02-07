@@ -150,13 +150,14 @@ in
     gnumake
     file
 
+    gnome.gnome-terminal
+
     texlab
     llvmPackages.clang-unwrapped
 
     gnome.zenity
     cryptsetup
   ];
-
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
