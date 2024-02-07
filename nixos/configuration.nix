@@ -150,8 +150,6 @@ in
     gnumake
     file
 
-    gnome.gnome-terminal
-
     texlab
     llvmPackages.clang-unwrapped
 
