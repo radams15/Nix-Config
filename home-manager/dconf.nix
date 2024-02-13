@@ -36,11 +36,6 @@ in {
         "org/gnome/settings/daemon/plugins/color" = {
           "night-light-enabled" = true;
         };
-
-        "org/gnome/Console" = {
-          "use-system-font" = false;
-          "custom-font" = "JetBrainsMonoNL Nerd Font 10";
-        };
      };
  
 }
