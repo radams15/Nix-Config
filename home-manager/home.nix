@@ -17,6 +17,7 @@
     ./packages.nix
     ./defaults.nix
     ./fonts.nix
+    ./terminal.nix
   ];
 
   nixpkgs = {

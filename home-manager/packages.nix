@@ -31,6 +31,7 @@ in {
     tor-browser-bundle-bin
     rhythmbox
     distrobox
+    marker
 
     direnv
 

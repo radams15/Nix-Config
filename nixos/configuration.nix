@@ -107,6 +107,7 @@ in
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.gnome-remote-desktop.enable = false;
+
   environment.gnome.excludePackages = with pkgs; [
     gnome3.totem
     gnome-photos
@@ -115,6 +116,7 @@ in
     gnome3.cheese
     gnome.gnome-remote-desktop
     gnome-tour
+    gnome-console
     epiphany
   ];
 
