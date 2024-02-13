@@ -34,7 +34,10 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "the-brick"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  networking.extraHosts = ''
+    10.0.0.2 server
+  '';
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -103,12 +106,14 @@ in
 
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.gnome.gnome-remote-desktop.enable = false;
   environment.gnome.excludePackages = with pkgs; [
     gnome3.totem
     gnome-photos
     gnome3.gnome-music
     gnome3.geary
     gnome3.cheese
+    gnome.gnome-remote-desktop
     gnome-tour
     epiphany
   ];
@@ -158,16 +163,17 @@ in
   ];
 
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
+  services.pipewire.enable = false;
+  hardware.pulseaudio = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
+    package = pkgs.pulseaudioFull;
+    extraConfig = ''
+      load-module module-bluetooth-policy
+      load-module module-bluetooth-discover
+    '';
   };
 
+  security.rtkit.enable = true;
   virtualisation = {
     podman = {
       enable = true;
