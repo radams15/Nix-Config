@@ -14,6 +14,7 @@ let
 in {
   home.packages = with pkgs; [
     clapper
+    remmina
     authenticator
     libreoffice
     firefox
