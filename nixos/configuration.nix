@@ -37,6 +37,7 @@ in
 
   networking.extraHosts = ''
     10.0.0.2 server
+    10.0.0.3 pi
   '';
 
   # Enable networking
@@ -148,6 +149,7 @@ in
       '';
     })
     home-manager
+    tmux
     perl
     python3
     ruby

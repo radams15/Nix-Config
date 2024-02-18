@@ -17,6 +17,7 @@ in {
     authenticator
     libreoffice
     firefox
+    chromium
     discord
     freetube
     jellyfin-media-player
