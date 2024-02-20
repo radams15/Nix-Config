@@ -54,6 +54,5 @@ in {
     pythonLibs
 
     mktemplate
-    ppcross8086
   ];
 }
