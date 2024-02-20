@@ -13,12 +13,11 @@ let
   ]);
 in {
   home.packages = with pkgs; [
-    clapper
+    vlc
     remmina
     authenticator
     libreoffice
     firefox
-    chromium
     discord
     freetube
     jellyfin-media-player
@@ -26,7 +25,6 @@ in {
     gnome.gnome-tweaks
     gnome.eog
     evolution
-    davmail
     starship
     gimp
     glib
@@ -37,7 +35,6 @@ in {
 
     direnv
 
-    gnomeExtensions.gsconnect
     gnomeExtensions.night-theme-switcher
 
     jetbrains.clion
@@ -57,5 +54,6 @@ in {
     pythonLibs
 
     mktemplate
+    ppcross8086
   ];
 }
