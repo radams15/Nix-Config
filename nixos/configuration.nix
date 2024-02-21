@@ -167,15 +167,15 @@ in
   ];
 
   sound.enable = true;
-  services.pipewire.enable = false;
-  hardware.pulseaudio = {
+
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
     enable = true;
-    package = pkgs.pulseaudioFull;
-    extraConfig = ''
-      load-module module-bluetooth-policy
-      load-module module-bluetooth-discover
-    '';
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
+
 
   security.rtkit.enable = true;
   virtualisation = {
