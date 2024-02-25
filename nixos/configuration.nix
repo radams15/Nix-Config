@@ -121,10 +121,6 @@ in
     epiphany
   ];
 
-
-
-  programs.steam.enable = true;
-
   environment.systemPackages = with pkgs; [
     ((custom_vim.override{ }).customize {
       name = "vim";

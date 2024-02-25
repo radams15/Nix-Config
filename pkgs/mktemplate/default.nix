@@ -1,18 +1,19 @@
 { lib, stdenv, fetchFromGitHub, buildGoModule }:
 let
-  pname = "mktempslate";
-  version = "1.1.0";
+  pname = "mktemplate";
+  version = "1.2.0";
 in
    buildGoModule {
     inherit pname version;
-    vendorHash = null;
 
     src = fetchFromGitHub {
       owner = "radams15";
       repo = "template";
       rev = "v${version}";
-      sha256 = "sha256-1HNZTbr4OPaf8cPoYiZVDH0uLM7dv5zDXRfOwmQdGYU=";
+      sha256 = "sha256-oSlakVq+00mvJm4iffonaehXurdfY+AJtAdG1sJumSw=";
     };
+
+    vendorHash = "sha256-3mUgR6TKTOz5TKLbZN9Sl0LECzK2f1p/JzX9Zd3q5sU=";
 
     meta = with lib; {
       description = "Simple template initialiser.";
