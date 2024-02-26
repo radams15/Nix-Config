@@ -13,6 +13,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.kernelParams = [ "btusb.enable_autosuspend=0" ];
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/0f3b47a3-b915-4141-abc7-efeaa0b7fcbc";
       fsType = "ext4";
