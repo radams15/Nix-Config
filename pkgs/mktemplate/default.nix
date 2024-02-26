@@ -1,7 +1,7 @@
 { lib, stdenv, fetchFromGitHub, buildGoModule }:
 let
   pname = "mktemplate";
-  version = "1.2.0";
+  version = "1.2.1";
 in
    buildGoModule {
     inherit pname version;
@@ -10,7 +10,7 @@ in
       owner = "radams15";
       repo = "template";
       rev = "v${version}";
-      sha256 = "sha256-oSlakVq+00mvJm4iffonaehXurdfY+AJtAdG1sJumSw=";
+      sha256 = "sha256-thk0JnSw7A7/kWtegbMqF0eilz65Avg0suTc7XZGp1c=";
     };
 
     vendorHash = "sha256-3mUgR6TKTOz5TKLbZN9Sl0LECzK2f1p/JzX9Zd3q5sU=";
