@@ -54,5 +54,6 @@ in {
     pythonLibs
 
     mktemplate
+    ida-free
   ];
 }
