@@ -1,0 +1,6 @@
+{
+  "x86_64-linux": {
+    "url": "https://cdn.binary.ninja/installers/BinaryNinja-demo.zip",
+    "sha256": "98a2eafeeb05cfceb0a34edf7c5f8c95db750006b02163d4a55420ebaba6e639"
+  }
+}

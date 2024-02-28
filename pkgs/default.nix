@@ -3,4 +3,5 @@
   mktemplate = pkgs.callPackage ./mktemplate { };
   ppcross8086 = pkgs.callPackage ./ppcross8086 { };
   ida-free = pkgs.callPackage ./ida-free { };
+  binaryninja = pkgs.callPackage ./binaryninja { };
 }
