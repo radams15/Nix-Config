@@ -8,12 +8,8 @@ DOCKER?=podman
 
 all: doc.pdf
 
-.PHONY: gen
-gen:
-	cd gen && perl make.pl && cd ..
-
 .PHONY: docker
-docker: gen
+docker:
 	${DOCKER} run -v "$$(pwd)":/wdir -it --rm ${IMAGE} doc.pdf
 
 words:
