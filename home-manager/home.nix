@@ -18,6 +18,7 @@
     ./defaults.nix
     ./fonts.nix
     ./terminal.nix
+    ./firefox.nix
   ];
 
   nixpkgs = {

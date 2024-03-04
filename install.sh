@@ -2,7 +2,7 @@
 
 if [ "$1" == "home" ]
 then
-	home-manager switch --flake .#rhys@the-brick
+	home-manager switch -b backup --flake .#rhys@the-brick
 elif [ "$1" == "upgrade" ]
 then
     nix flake update

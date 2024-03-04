@@ -18,7 +18,6 @@ in {
     remmina
     authenticator
     libreoffice
-    firefox
     discord
     freetube
     jellyfin-media-player
