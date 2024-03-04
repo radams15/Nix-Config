@@ -14,6 +14,7 @@ let
 in {
   home.packages = with pkgs; [
     vlc
+    gajim
     remmina
     authenticator
     libreoffice
