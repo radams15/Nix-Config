@@ -24,10 +24,10 @@ docker-image:
 
 .PHONY: doc.pdf
 doc.pdf:
-	${PERLTEX} --latex=pdflatex ${MAIN} -o ${OUT}
+	${PERLTEX} --latex=shell_xelatex ${MAIN} -o ${OUT}
 	${BIBTEX} main
-	${PERLTEX} --latex=pdflatex ${MAIN} -o ${OUT}
-	${PERLTEX} --latex=pdflatex ${MAIN} -o ${OUT}
+	${PERLTEX} --latex=shell_xelatex ${MAIN} -o ${OUT}
+	${PERLTEX} --latex=shell_xelatex ${MAIN} -o ${OUT}
 
 clean:
-	rm -rf *.{log,lgpl,dvi,aux,xml,pdf,toc,out,dfpl,frpl,tfpl,topl} *-blx.bib
+	rm -rf *.{log,lgpl,dvi,aux,xml,pdf,toc,out,dfpl,frpl,tfpl,topl,bbl,blg} *-blx.bib _minted-main
