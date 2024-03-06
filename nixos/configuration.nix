@@ -121,6 +121,11 @@ in
     epiphany
   ];
 
+  services.tor = {
+    enable = true;
+    client.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     ((custom_vim.override{ }).customize {
       name = "vim";
