@@ -18,6 +18,10 @@ alias ll='ls -lah'
 alias cls='clear'
 alias lvim='vim -u ~/.config/vim/vimrc.light'
 
+function cpsl {
+  cp `readlink $1` $2
+}
+
 function len {
     echo $1 | wc -c
 }
