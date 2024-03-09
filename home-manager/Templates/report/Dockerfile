@@ -12,7 +12,7 @@ RUN echo 'xelatex -shell-escape $@' > /bin/shell_xelatex && chmod +x /bin/shell_
 
 RUN dnf in -y python3-pygments which
 
-run dnf in -y texlive-tikzpagenodes
+RUN dnf in -y texlive-tikzpagenodes texlive-appendix
 
 WORKDIR /wdir
 
