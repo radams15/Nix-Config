@@ -39,10 +39,6 @@ in {
 
     jetbrains.clion
     jetbrains.idea-ultimate
-    jetbrains.pycharm-professional
-    jetbrains.phpstorm
-    jetbrains.ruby-mine
-    jetbrains.rider
     jetbrains.goland
 
     podman-compose
