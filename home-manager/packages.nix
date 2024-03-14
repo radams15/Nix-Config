@@ -16,6 +16,7 @@ in {
     vlc
     gajim
     remmina
+    chromium
     authenticator
     libreoffice
     discord
