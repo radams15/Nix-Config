@@ -7,7 +7,7 @@
     bashrcExtra = ''
 export LD_LIBRARY_PATH=
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-export PATH=$PATH:~/go/bin:~/binaryninja:~/idafree-8.3:~/.local/bin
+export PATH=~/scripts/distrobox:$PATH:~/go/bin:~/binaryninja:~/idafree-8.3:~/.local/bin
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 eval "$(direnv hook bash)"

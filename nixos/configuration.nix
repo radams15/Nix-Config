@@ -61,6 +61,9 @@ in
     LC_TIME = "en_GB.UTF-8";
   };
 
+  # Increase tmpfs size.
+  services.logind.extraConfig = "RuntimeDirectorySize=4G";
+
   # Configure keymap in X11
   services.xserver = {
     layout = "gb";
