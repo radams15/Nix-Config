@@ -27,6 +27,7 @@ in
       #./virtualbox.nix
       ./thinkpad.nix
       ./share.nix
+      ./dhcpsvr.nix
     ];
 
   # Bootloader.
@@ -38,6 +39,8 @@ in
   networking.extraHosts = ''
     10.0.0.2 server
     10.0.0.3 pi
+
+    10.10.253.100 drool.sigint notes.drool.sigint testing_pub.drool.sigint
   '';
 
   # Enable networking

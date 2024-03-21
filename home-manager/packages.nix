@@ -14,6 +14,8 @@ let
 in {
   home.packages = with pkgs; [
     vlc
+    calls
+    wireshark
     gajim
     remmina
     chromium
