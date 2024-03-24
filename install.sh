@@ -10,4 +10,7 @@ then
 elif [ "$1" == "system" ]
 then
 	sudo nixos-rebuild switch --upgrade --flake .#the-brick
+elif [ "$1" == "garbage" ]
+then
+    sudo nix-collect-garbage
 fi
