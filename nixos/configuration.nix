@@ -66,6 +66,11 @@ in
 
   # Increase tmpfs size.
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
+  boot.extraModprobeConfig = ''
+  blacklist dvb_usb_rtl28xxu
+  blacklist rtl2832
+  blacklist dvb_usb_v2
+  '';
 
   # Configure keymap in X11
   services.xserver = {
@@ -86,7 +91,7 @@ in
   users.users.rhys = {
     isNormalUser = true;
     description = "Rhys Adams";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "plugdev" ];
   };
 
   nixpkgs = {
@@ -156,6 +161,7 @@ in
       '';
     })
     home-manager
+    rtl-sdr
     tmux
     perl
     python3
@@ -174,6 +180,9 @@ in
 
     virt-manager
   ];
+
+  services.udev.packages = [ pkgs.rtl-sdr ];
+  hardware.rtl-sdr.enable = true;
 
   sound.enable = true;
 

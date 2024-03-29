@@ -48,6 +48,7 @@ in {
     cmake
     gdb
     gcc
+    go
 
     perlLibs
     pythonLibs
