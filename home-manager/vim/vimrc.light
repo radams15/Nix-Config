@@ -12,14 +12,4 @@ syntax off
 map q <Nop>
 set mouse=a
 
-let perldll=system('ldd /usr/bin/perl | grep -oE "\/.*(libperl.so[\.0-9]*)"')
-
-
-perl << EOF
-my $HOME = $ENV{HOME};
-do "$HOME/.vim/VimExtensions.pm";
-EOF
-
-nnoremap cc :perl &comment_line <CR>
-xnoremap cc :perl &comment_block <CR>
 nnoremap ws cs

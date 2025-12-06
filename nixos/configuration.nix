@@ -24,23 +24,19 @@ in
 {
   imports =
     [
-      #./virtualbox.nix
       ./thinkpad.nix
       ./share.nix
-      ./dhcpsvr.nix
+      # ./dhcpsvr.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "the-brick"; # Define your hostname.
+  networking.hostName = "the-brick";
 
   networking.extraHosts = ''
     10.0.0.2 server
-    10.0.0.3 pi
-
-    10.10.253.100 drool.sigint notes.drool.sigint testing_pub.drool.sigint
   '';
 
   # Enable networking
@@ -138,7 +134,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    ((custom_vim.override{ }).customize {
+    ((vim.override{ }).customize {
       name = "vim";
 
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
@@ -146,12 +142,12 @@ in
           awesome-vim-colorschemes
           gruvbox
           nerdtree
-          vim-devicons
-          vim-airline
-          vim-lsp
-          vim-lsp-ale
-          ale
-          autoComplPop
+          # vim-devicons
+          # vim-airline
+          # vim-lsp
+          # vim-lsp-ale
+          # ale
+          # autoComplPop
         ];
         opt = [];
       };
@@ -165,18 +161,11 @@ in
     tmux
     perl
     python3
-    ruby
     wget
     curl
     git
     gnumake
     file
-
-    texlab
-    llvmPackages.clang-unwrapped
-
-    gnome.zenity
-    cryptsetup
 
     virt-manager
   ];

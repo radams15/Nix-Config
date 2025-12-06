@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       # upstream DNS servers
-      server = [ "9.9.9.9" "8.8.8.8" "1.1.1.1" ];
+      server = [ "1.1.1.1" "9.9.9.9" "8.8.8.8" ];
       # sensible behaviours
       domain-needed = true;
       bogus-priv = true;

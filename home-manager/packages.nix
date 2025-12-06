@@ -15,26 +15,21 @@ in {
   home.packages = with pkgs; [
     vlc
     calls
-    wireshark
-    gajim
     remmina
     chromium
     authenticator
     libreoffice
     discord
-    freetube
     jellyfin-media-player
     signal-desktop
     gnome.gnome-tweaks
     gnome.eog
     evolution
-    starship
     gimp
     glib
     tor-browser-bundle-bin
     rhythmbox
     distrobox
-    marker
 
     direnv
 
@@ -42,7 +37,6 @@ in {
 
     jetbrains.clion
     jetbrains.idea-ultimate
-    jetbrains.goland
 
     podman-compose
     cmake
@@ -54,6 +48,6 @@ in {
     pythonLibs
 
     mktemplate
-    ida-free
+    # ida-free
   ];
 }
