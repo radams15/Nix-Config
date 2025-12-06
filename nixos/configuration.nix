@@ -61,7 +61,7 @@ in
   };
 
   # Increase tmpfs size.
-  services.logind.extraConfig = "RuntimeDirectorySize=4G";
+  # services.logind.extraConfig = "RuntimeDirectorySize=4G";
   boot.extraModprobeConfig = ''
   blacklist dvb_usb_rtl28xxu
   blacklist rtl2832
@@ -93,7 +93,7 @@ in
   nixpkgs = {
     overlays = [
       outputs.overlays.additions
-      outputs.overlays.modifications
+      # outputs.overlays.modifications
       # outputs.overlays.unstable-packages
     ];
     config = {
@@ -117,12 +117,12 @@ in
   services.gnome.gnome-remote-desktop.enable = false;
 
   environment.gnome.excludePackages = with pkgs; [
-    gnome3.totem
+    totem
     gnome-photos
-    gnome3.gnome-music
-    gnome3.geary
-    gnome3.cheese
-    gnome.gnome-remote-desktop
+    gnome-music
+    geary
+    cheese
+    gnome-remote-desktop
     gnome-tour
     gnome-console
     epiphany
@@ -134,11 +134,11 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    ((vim.override{ }).customize {
+    ((vim-full.override{ }).customize {
       name = "vim";
 
-      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-        start = [
+     vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
+       start = [
           awesome-vim-colorschemes
           gruvbox
           nerdtree
@@ -148,14 +148,22 @@ in
           # vim-lsp-ale
           # ale
           # autoComplPop
-        ];
-        opt = [];
+       ];
+
+       opt = [];
       };
 
       vimrcConfig.customRC = ''
         source ~/.vim/vimrc
       '';
     })
+
+    gnome-terminal
+    eog
+    gnome-tweaks
+    evolution
+    distrobox
+
     home-manager
     rtl-sdr
     tmux
@@ -172,8 +180,6 @@ in
 
   services.udev.packages = [ pkgs.rtl-sdr ];
   hardware.rtl-sdr.enable = true;
-
-  sound.enable = true;
 
   hardware.pulseaudio.enable = false;
   services.pipewire = {
@@ -200,9 +206,6 @@ in
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
-        ovmf = {
-          enable = true;
-        };
       };
     };
   };
@@ -228,6 +231,6 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 
 }

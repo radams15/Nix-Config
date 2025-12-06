@@ -12,11 +12,11 @@
 
         search.default = "DuckDuckGo";
 
-        extensions = with config.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          # xbrowsersync
-          # bitwarden
-        ];
+        # extensions = with config.nur.repos.rycee.firefox-addons; [
+        #   ublock-origin
+        #   xbrowsersync
+        #   bitwarden
+        # ];
 
 
         userChrome = ''

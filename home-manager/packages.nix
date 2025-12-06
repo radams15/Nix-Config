@@ -15,20 +15,13 @@ in {
   home.packages = with pkgs; [
     vlc
     calls
-    remmina
-    chromium
     authenticator
     libreoffice
     discord
-    jellyfin-media-player
+    # jellyfin-media-player
     signal-desktop
-    gnome.gnome-tweaks
-    gnome.eog
-    evolution
-    gimp
     glib
-    tor-browser-bundle-bin
-    rhythmbox
+    tor-browser
     distrobox
 
     direnv
@@ -48,6 +41,5 @@ in {
     pythonLibs
 
     mktemplate
-    # ida-free
   ];
 }

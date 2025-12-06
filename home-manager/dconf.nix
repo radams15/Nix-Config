@@ -1,10 +1,10 @@
 {
   pkgs, ...
 }: let
-  wallpaperImg = pkgs.fetchurl {
-    url = "https://images.unsplash.com/photo-1509641402296-b7f020ccf694?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=vincent-van-zalinge-TtEqhAqy_GE-unsplash.jpg&w=1920";
-    hash = "sha256-6IJINbYdNpquHOv46KCL+LYHG1PM/11wr1MBdTDc+fI=";
-  };
+ wallpaperImg = pkgs.fetchurl {
+   url = "https://images.unsplash.com/photo-1509641402296-b7f020ccf694?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=vincent-van-zalinge-TtEqhAqy_GE-unsplash.jpg&w=1920";
+   hash = "sha256-ijOK6UDjz3KrTdWRU6ieQQhtqhGoG/9ZI/lb8jOsgFw=";
+ };
 in {
       dconf.settings = {
         "org/gnome/desktop/wm/preferences" = { # Left window controls

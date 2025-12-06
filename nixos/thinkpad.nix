@@ -16,12 +16,12 @@
   boot.kernelParams = [ "btusb.enable_autosuspend=0" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0f3b47a3-b915-4141-abc7-efeaa0b7fcbc";
+    { device = "/dev/disk/by-uuid/db0f2bd2-d0f0-489f-9e2c-9031b23341c7";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A53C-E99E";
+    { device = "/dev/disk/by-uuid/258C-8E55";
       fsType = "vfat";
     };
 

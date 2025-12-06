@@ -17,7 +17,6 @@
     ./packages.nix
     ./defaults.nix
     ./fonts.nix
-    ./terminal.nix
     ./firefox.nix
   ];
 
@@ -26,7 +25,7 @@
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
-      outputs.overlays.modifications
+      # outputs.overlays.modifications
       # outputs.overlays.unstable-packages
     ];
     config = {
@@ -51,5 +50,5 @@
 
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "23.05";
+  home.stateVersion = "25.11";
 }
