@@ -1,14 +1,14 @@
-{ stdenv, fetchFromGitHub }:
+{ stdenv, fetchFromGitHub, fetchgit }:
 
 stdenv.mkDerivation rec {
-  pname = "lepton-firefox-theme";
-  version = "8.6.0";
+  name = "lepton-firefox-theme";
 
-  src = fetchFromGitHub {
-    owner = "black7375";
-    repo = "Firefox-UI-Fix";
-    rev = "v${version}";
-    hash = "sha256-+TNEtdYePMVBLRUJyzZOKgzFr8tqfqmxy8NfaABP1jw=";
+  gitRef = "6996841e86885d2d08a2bcbc62ee20d49f71437c";
+
+  src = fetchGit {
+    url = "https://github.com/black7375/Firefox-UI-Fix";
+    ref = "photon-style";
+    rev = "${gitRef}";
   };
 
   installPhase = ''

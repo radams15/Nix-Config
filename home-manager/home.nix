@@ -42,8 +42,10 @@
   programs.git = {
     enable = true;
     ignores = [ "*.swp" ];
-    userName = "Rhys Adams";
-    userEmail = "rhys@therhys.co.uk";
+    settings.user = {
+      name = "Rhys Adams";
+      email = "rhys@therhys.co.uk";
+    };
   };
 
   programs.home-manager.enable = true;
