@@ -18,11 +18,12 @@ in {
     authenticator
     libreoffice
     discord
-    # jellyfin-media-player
     signal-desktop
     glib
     tor-browser
     distrobox
+    openscad
+    arduino-ide
 
     direnv
 

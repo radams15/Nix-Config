@@ -10,7 +10,8 @@
         name = "default";
         isDefault = true;
 
-        search.default = "DuckDuckGo";
+        search.default = "ddg";
+        search.force = true;
 
         # extensions = with config.nur.repos.rycee.firefox-addons; [
         #   ublock-origin
