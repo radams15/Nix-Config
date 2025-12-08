@@ -158,6 +158,9 @@ in
       '';
     })
 
+    openvpn
+    networkmanager-openvpn
+
     gnome-terminal
     eog
     gnome-tweaks
