@@ -1,4 +1,7 @@
-{ stdenv, fetchurl }:
+{ stdenv, fetchurl, autoPatchelfHook,
+zlib,
+gtk2,
+}:
 
 let
           name = "xtrkcad";
@@ -13,6 +16,15 @@ in
 
 stdenv.mkDerivation {
         inherit name version installerFile;
+
+        nativeBuildInputs = [
+          autoPatchelfHook
+        ];
+
+        buildInputs = [
+          zlib
+          gtk2
+        ];
 
         src = installerFile;
         unpackPhase = ''
