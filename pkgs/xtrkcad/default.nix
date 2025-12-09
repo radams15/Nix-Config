@@ -35,6 +35,12 @@ stdenv.mkDerivation {
 mkdir -p $out
 
 $SHELL ${installerFile} --skip-license --prefix=$out
+
+mv $out/bin/xtrkcad $out/bin/_xtrkcad
+echo env XTRKCADLIB=$out/share/xtrkcad _xtrkcad > $out/bin/xtrkcad
+chmod +x $out/bin/xtrkcad
+
+cp -r $out/share/xtrkcad/applications/  $out/share/applications
         '';
       }
 
