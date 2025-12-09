@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git add -N
+
 if [ "$1" == "home" ]
 then
 	home-manager switch -b backup --impure --flake .#rhys@the-brick
