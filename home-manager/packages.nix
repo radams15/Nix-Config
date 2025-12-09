@@ -42,5 +42,6 @@ in {
     pythonLibs
 
     mktemplate
+    xtrkcad
   ];
 }
