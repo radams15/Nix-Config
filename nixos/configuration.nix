@@ -74,6 +74,13 @@ in
     xkbVariant = "mac";
   };
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
+
   # Make normal shebangs work
   services.envfs.enable = true;
 
