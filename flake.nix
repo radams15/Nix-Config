@@ -18,6 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pia.url = "github:Fuwn/pia.nix";
+    pia.inputs.nixpkgs.follows = "nixpkgs";
+
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -29,6 +33,7 @@
   outputs = {
     self,
     nixpkgs,
+    pia,
     nur,
     home-manager,
     ...
@@ -70,6 +75,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          pia.nixosModules."x86_64-linux".default
         ];
       };
     };

@@ -179,6 +179,9 @@ in
     file
 
     virt-manager
+
+    wine
+    winetricks
   ];
 
   services.udev.packages = [ pkgs.rtl-sdr ];
@@ -227,6 +230,9 @@ in
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
+
+  services.pia.enable = true;
+  services.pia.authUserPassFile = "/home/rhys/piacreds.txt";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
