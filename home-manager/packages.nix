@@ -24,6 +24,9 @@ in {
     distrobox
     openscad
     arduino-ide
+    arduino-cli
+
+    prusa-slicer
 
     direnv
 

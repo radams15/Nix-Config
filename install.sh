@@ -8,7 +8,7 @@ then
 elif [ "$1" == "upgrade" ]
 then
     nix flake update
-    sudo nix-channel --update --impure
+    sudo nix-channel --update
 elif [ "$1" == "system" ]
 then
 	sudo nixos-rebuild switch --impure --upgrade --flake .#the-brick

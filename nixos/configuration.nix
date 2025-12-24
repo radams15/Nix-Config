@@ -94,7 +94,7 @@ in
   users.users.rhys = {
     isNormalUser = true;
     description = "Rhys Adams";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "plugdev" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "plugdev" "dialout" ];
   };
 
   nixpkgs = {
@@ -231,6 +231,14 @@ in
     nssmdns = true;
     openFirewall = true;
   };
+
+
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+    libxcb
+  ];
+
   
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
