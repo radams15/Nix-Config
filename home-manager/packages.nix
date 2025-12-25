@@ -31,6 +31,7 @@ in {
     direnv
 
     gnomeExtensions.night-theme-switcher
+    gnomeExtensions.gsconnect
 
     jetbrains.clion
     jetbrains.idea-ultimate
