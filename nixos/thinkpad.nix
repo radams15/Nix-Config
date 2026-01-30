@@ -12,7 +12,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl8821au # Archer V2 wifi dongle
   ];
 
   boot.kernelParams = [ "btusb.enable_autosuspend=0" ];
