@@ -12,6 +12,13 @@ then
 elif [ "$1" == "system" ]
 then
 	sudo nixos-rebuild switch --impure --upgrade --flake .#the-brick
+elif [ "$1" == "boot" ]
+then
+	sudo nixos-rebuild boot --impure --upgrade --flake .#the-brick
+
+elif [ "$1" == "system" ]
+then
+	sudo nixos-rebuild switch --impure --upgrade --flake .#the-brick
 elif [ "$1" == "garbage" ]
 then
     sudo nix-collect-garbage

@@ -45,6 +45,9 @@ in {
     perlLibs
     pythonLibs
 
+    freecad
+    moonlight-qt
+
     mktemplate
     xtrkcad
   ];

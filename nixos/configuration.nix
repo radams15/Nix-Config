@@ -26,7 +26,6 @@ in
     [
       ./thinkpad.nix
       ./share.nix
-      # ./dhcpsvr.nix
     ];
 
   # Bootloader.
@@ -240,15 +239,19 @@ in
   ];
 
   
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPortRanges = [
-    # KDE Connect
-    { from = 1714; to = 1764; }
-  ];
-  networking.firewall.allowedUDPPortRanges = [
-    # KDE Connect
-    { from = 1714; to = 1764; }
-  ];
+  networking.firewall = {
+    enable = true;
+
+    allowedTCPPorts = [ 80 443 3000 22 ];
+    allowedUDPPorts = [  ];
+
+    allowedUDPPortRanges = [
+      { from = 1714; to = 1764; } # KDE Connect
+    ];
+    allowedTCPPortRanges = [
+      { from = 1714; to = 1764; } # KDE Connect
+    ];
+};
 
   services.pia.enable = true;
   services.pia.authUserPassFile = "/home/rhys/piacreds.txt";

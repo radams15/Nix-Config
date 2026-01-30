@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 let
   perlLibs = pkgs.perl.withPackages (p: [
-    p.DBI
+    # p.DBI
   ]);
 in
   pkgs.mkShell {

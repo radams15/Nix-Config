@@ -4,16 +4,23 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
+  /*
   fileSystems."/mnt/share" = {
     device = "server:/mnt/share";
     options = ["nofail" "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"]; # disconnects after 10 minutes (i.e. 600 seconds)
     fsType = "nfs";
   };
+  */
 
-  fileSystems."/mnt/spool" = {
-    device = "pi:/var/spool/asterisk";
-    options = ["nofail" "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"]; # disconnects after 10 minutes (i.e. 600 seconds)
-    fsType = "nfs";
+
+  services.autofs = {
+    enable = true;
+    autoMaster = let
+      mapConf = pkgs.writeText "auto" ''
+          share   10.0.0.2:/mnt/share
+      '';
+    in ''
+      +auto.master
+      /mnt file:${mapConf}'';
   };
-
 }
