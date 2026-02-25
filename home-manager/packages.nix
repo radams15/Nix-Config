@@ -35,6 +35,7 @@ in {
 
     jetbrains.clion
     jetbrains.idea-ultimate
+    jetbrains.phpstorm
 
     podman-compose
     cmake

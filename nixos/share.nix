@@ -21,6 +21,6 @@
       '';
     in ''
       +auto.master
-      /mnt file:${mapConf}'';
+      /mnt ${mapConf}'';
   };
 }

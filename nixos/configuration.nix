@@ -32,6 +32,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.supportedFilesystems = [ "nfs" ]; # Enable nfs support
+
   networking.hostName = "the-brick";
 
   networking.extraHosts = ''
@@ -39,7 +41,12 @@ in
   '';
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -165,9 +172,9 @@ in
     })
 
     openvpn
-    networkmanager-openvpn
 
     gnome-terminal
+    file-roller
     eog
     gnome-tweaks
     evolution
