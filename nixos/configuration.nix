@@ -155,8 +155,9 @@ in
           awesome-vim-colorschemes
           gruvbox
           nerdtree
-          # vim-devicons
-          # vim-airline
+          nerdcommenter
+          vim-devicons
+          vim-airline
           # vim-lsp
           # vim-lsp-ale
           # ale

@@ -25,6 +25,8 @@ in {
     openscad
     arduino-ide
     arduino-cli
+    digikam
+    immich-go
 
     prusa-slicer
 
