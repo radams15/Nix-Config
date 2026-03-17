@@ -75,9 +75,9 @@ in
   '';
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "gb";
-    xkbVariant = "mac";
+    variant = "mac";
   };
 
   hardware.graphics = {
@@ -125,8 +125,8 @@ in
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.gnome.gnome-remote-desktop.enable = false;
 
   environment.gnome.excludePackages = with pkgs; [
@@ -201,7 +201,7 @@ in
   services.udev.packages = [ pkgs.rtl-sdr ];
   hardware.rtl-sdr.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -235,7 +235,7 @@ in
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
 

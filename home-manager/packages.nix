@@ -39,6 +39,7 @@ in {
     jetbrains.idea-ultimate
     jetbrains.phpstorm
 
+    ansible
     podman-compose
     cmake
     gdb
