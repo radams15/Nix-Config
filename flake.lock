@@ -21,24 +21,6 @@
         "type": "github"
       }
     },
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1726560853,
-        "narHash": "sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -84,37 +66,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1773764742,
-        "narHash": "sha256-5hxkpmJL/qpadw8T3g6Mg6RieScfZAv5r0TUJijYgso=",
+        "lastModified": 1773771236,
+        "narHash": "sha256-TxW1ZxwciRZgGYIdro6mZM7X0d2lK7f4yvCjPJvuqIk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "14164079c462c76d79b06f81d9fe99eb64fca3de",
+        "rev": "f146bb008c5b344cad29226d12b0ea9da32479fa",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
-        "type": "github"
-      }
-    },
-    "pia": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739700451,
-        "narHash": "sha256-UrUTLVTFmtLbu0/pnt3C7eS/QiMuLztAEnS2PO5ayjg=",
-        "owner": "Fuwn",
-        "repo": "pia.nix",
-        "rev": "5185a76c3361c62acd703b289fc34df1295b61c3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Fuwn",
-        "repo": "pia.nix",
         "type": "github"
       }
     },
@@ -122,23 +83,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nur": "nur",
-        "pia": "pia"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
+        "nur": "nur"
       }
     }
   },

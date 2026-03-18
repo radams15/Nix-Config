@@ -9,13 +9,17 @@
     enable = true;
     defaultApplications = {
       "image/jpeg" = ["org.gnome.eog.desktop"];
+      "image/png" = ["org.gnome.eog.desktop"];
       "image/tiff" = ["org.gnome.eog.desktop"];
+
       "text/x-python" = ["org.gnome.TextEditor.desktop"];
+      "text/x-perl" = ["org.gnome.TextEditor.desktop"];
       "text/markdown" = ["org.gnome.TextEditor.desktop"];
-      "application/pdf" = ["org.gnome.Evince.desktop"];
       "text/x-tex" = ["org.gnome.TextEditor.desktop"];
       "text/plain" = ["org.gnome.TextEditor.desktop"];
+
       "x-scheme-handler/discord-1170028348756471908" = ["discord-1170028348756471908.desktop"];
+      "application/pdf" = ["org.gnome.Evince.desktop"];
 
       "text/html" = "org.mozilla.Firefox.desktop";
       "x-scheme-handler/http" = "org.mozilla.Firefox.desktop";

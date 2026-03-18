@@ -13,13 +13,6 @@
         search.default = "ddg";
         search.force = true;
 
-        # extensions = with config.nur.repos.rycee.firefox-addons; [
-        #   ublock-origin
-        #   xbrowsersync
-        #   bitwarden
-        # ];
-
-
         userChrome = ''
           @import "${
               inputs.self.packages.${pkgs.system}.lepton-firefox-theme

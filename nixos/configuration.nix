@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   inputs,
   outputs,
@@ -24,8 +20,9 @@ in
 {
   imports =
     [
-      ./thinkpad.nix
-      ./share.nix
+      #./thinkpad.nix
+	./latitude.nix      
+	./share.nix
     ];
 
   # Bootloader.
@@ -67,7 +64,7 @@ in
   };
 
   # Increase tmpfs size.
-  # services.logind.extraConfig = "RuntimeDirectorySize=4G";
+  services.logind.extraConfig = "RuntimeDirectorySize=4G";
   boot.extraModprobeConfig = ''
   blacklist dvb_usb_rtl28xxu
   blacklist rtl2832
@@ -158,10 +155,6 @@ in
           nerdcommenter
           vim-devicons
           vim-airline
-          # vim-lsp
-          # vim-lsp-ale
-          # ale
-          # autoComplPop
        ];
 
        opt = [];
@@ -182,7 +175,6 @@ in
     distrobox
 
     home-manager
-    rtl-sdr
     tmux
     perl
     python3
@@ -193,13 +185,7 @@ in
     file
 
     virt-manager
-
-    wine
-    winetricks
   ];
-
-  services.udev.packages = [ pkgs.rtl-sdr ];
-  hardware.rtl-sdr.enable = true;
 
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -208,9 +194,9 @@ in
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-
   security.rtkit.enable = true;
+
+
   virtualisation = {
     podman = {
       enable = true;
@@ -261,9 +247,6 @@ in
     ];
 };
 
-  services.pia.enable = true;
-  services.pia.authUserPassFile = "/home/rhys/piacreds.txt";
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -271,5 +254,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
