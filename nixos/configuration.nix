@@ -64,7 +64,6 @@ in
   };
 
   # Increase tmpfs size.
-  services.logind.extraConfig = "RuntimeDirectorySize=4G";
   boot.extraModprobeConfig = ''
   blacklist dvb_usb_rtl28xxu
   blacklist rtl2832
