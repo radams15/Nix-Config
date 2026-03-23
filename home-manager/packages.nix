@@ -34,6 +34,7 @@ in {
 
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.gsconnect
+    gnomeExtensions.home-assistant-extension
 
     jetbrains.clion
     jetbrains.idea-ultimate
