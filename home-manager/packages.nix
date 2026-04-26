@@ -38,7 +38,6 @@ in {
 
     jetbrains.clion
     jetbrains.idea-ultimate
-    jetbrains.phpstorm
     jetbrains.pycharm
 
     ansible
@@ -51,7 +50,6 @@ in {
     perlLibs
     pythonLibs
 
-    freecad
     moonlight-qt
 
     remmina
