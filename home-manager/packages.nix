@@ -39,6 +39,7 @@ in {
     jetbrains.clion
     jetbrains.idea-ultimate
     jetbrains.phpstorm
+    jetbrains.pycharm
 
     ansible
     podman-compose
@@ -52,6 +53,8 @@ in {
 
     freecad
     moonlight-qt
+
+    remmina
 
     mktemplate
     xtrkcad
