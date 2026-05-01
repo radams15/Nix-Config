@@ -37,7 +37,7 @@ in {
     gnomeExtensions.home-assistant-extension
 
     jetbrains.clion
-    jetbrains.idea-ultimate
+    jetbrains.idea
     jetbrains.pycharm
 
     ansible

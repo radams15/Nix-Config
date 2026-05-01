@@ -38,6 +38,7 @@
     evolution
     distrobox
 
+    dnsutils
     home-manager
     tmux
     perl
