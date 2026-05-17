@@ -22,6 +22,7 @@ in
     [
       #./thinkpad.nix
 	./latitude.nix      
+    ./ad.nix
 	./share.nix
     ./packages.nix
     ];
