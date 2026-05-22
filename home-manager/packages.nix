@@ -37,8 +37,6 @@ in {
     gnomeExtensions.home-assistant-extension
 
     jetbrains.clion
-    jetbrains.idea
-    jetbrains.pycharm
 
     ansible
     podman-compose
