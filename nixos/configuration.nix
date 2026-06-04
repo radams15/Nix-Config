@@ -27,6 +27,14 @@ in
     ./packages.nix
     ];
 
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
+    };
+    optimise.automatic = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
