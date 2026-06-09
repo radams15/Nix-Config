@@ -93,6 +93,12 @@ in
     ];
   };
 
+  services.printing.enable = true;
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.epkowa ];
+  };
+
   # Make normal shebangs work
   services.envfs.enable = true;
 
@@ -106,7 +112,7 @@ in
   users.users.rhys = {
     isNormalUser = true;
     description = "Rhys Adams";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "plugdev" "dialout" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "plugdev" "dialout" "docker" "scanner" "lp" ];
   };
 
   nixpkgs = {

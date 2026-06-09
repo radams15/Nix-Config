@@ -52,6 +52,8 @@
     dhcpcd
 
     virt-manager
+
+    epson-escpr2
   ];
 
   programs.steam = {
