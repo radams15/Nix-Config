@@ -96,7 +96,7 @@ in
   services.printing.enable = true;
   hardware.sane = {
     enable = true;
-    extraBackends = [ pkgs.epkowa ];
+    extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
   };
 
   # Make normal shebangs work
@@ -197,6 +197,7 @@ in
   services.avahi = {
     enable = true;
     nssmdns4 = true;
+    nssmdns = true;
     openFirewall = true;
   };
 

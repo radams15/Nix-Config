@@ -9,6 +9,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "thunderbolt.bw_alloc_mode=0" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f1729de8-7e26-47fa-89e7-6c71dbd13020";

@@ -51,6 +51,8 @@ in {
     moonlight-qt
 
     remmina
+    gimp
+    calibre
 
     mktemplate
     xtrkcad
