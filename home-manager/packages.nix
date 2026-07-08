@@ -25,7 +25,6 @@ in {
     openscad
     arduino-ide
     arduino-cli
-    digikam
     immich-go
 
     prusa-slicer
@@ -53,6 +52,8 @@ in {
     remmina
     gimp
     calibre
+    digikam
+    darktable
 
     mktemplate
     xtrkcad
